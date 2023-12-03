@@ -24,12 +24,12 @@ export default function Story() {
 				<AppText style={{ fontSize: 18, letterSpacing: 1.1 }}>
 					{
 						selectText({
-							en: `In my experience, I have worked on various projects, including developing e-commerce Luxury platform including LVMH, social networks, and real-time communication applications. Through these projects, I have gained expertise in a range of technologies, including JavaScript, React, Node.js, Express.js, MongoDB, SQL, AWS, and more.`
-
+							en: `With many years of work experience, I have taken part on various projects, including developing e-commerce Luxury platform including LVMH, social networks, and real-time communication applications. Through these projects, I have gained expertise in a range of technologies, including JavaScript, React, Node.js, Express.js, MongoDB, SQL, AWS, and more.`
+                             +<div/>+
 							+`My proficiency in front-end technologies, including HTML, angular ,React, Redux, CSS, and JavaScript/ typescript enables me to create visually appealing and responsive web interfaces that provide a seamless user experience. In addition, my knowledge of back-end technologies such as Node.js, Express.js, MongoDB, and SQL enables me to build reliable and secure server-side applications that are capable of handling high traffic volumes.`
-							
+							+<br/>+
 							+`As a Full Stack Developer, I am committed to staying up-to-date with the latest industry trends and advancements. I have a track record of continuously improving my skills and knowledge by attending conferences, participating in online communities, and engaging in self-directed learning. This dedication to growth enables me to deliver high-quality, scalable, and maintainable solutions that meet the unique needs of each client.`
-							
+						
 							+`Overall, I am excited about the opportunities to leverage my skills and expertise to drive innovation, growth, and success for my clients.`,
 							fr: `De 2015 à 2022, j'ai fait partie d'une équipe dans une startup appelée Shopinzon. Son objectif est de réunir les commerçants locaux, ainsi que leurs articles et services, dans une marketplace centralisée.`
 								+ `\n\nTout au long de cette aventure, mon équipe et moi avons utilisé les derniers technologies tels que React-Native, Firebase et Hasura.`
