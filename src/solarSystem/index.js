@@ -2,7 +2,7 @@ import * as THREE from "three";
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer.js";
 import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPass.js";
-import backgroundImage from "./98.jpg"
+import backgroundImage from "./estii.png"
 
 //global declaration
 let scene;
@@ -69,9 +69,9 @@ const starGeometry = new THREE.SphereGeometry(80, 64, 64);
 // galaxy material
 const starMaterial = new THREE.MeshBasicMaterial({
   map: THREE.ImageUtils.loadTexture(backgroundImage),
-  side: THREE.BackSide,
-  transparent: true,
-});
+  //side: THREE.BackSide,
+  transparent: false,
+})//;
 
 // galaxy mesh
 const starMesh = new THREE.Mesh(starGeometry, starMaterial);
