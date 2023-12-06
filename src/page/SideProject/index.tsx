@@ -1,39 +1,124 @@
-import { Image, Text, View } from "react-native";
-import Card from "../../component/Card";
-import AppText from "../../component/Text";
-import { useSelectText } from "../../hook/useLang";
-import cryptocurrenciesPicture from "./cryptocurrencies.jpeg"
+import React from 'react';
+import { Image, View, StyleSheet, TouchableOpacity } from 'react-native';
+import Card from '../../component/Card';
+import AppText from '../../component/Text';
+import { useSelectText } from '../../hook/useLang';
+import imageProject from './2.png';
+import githubIcon from './github.svg';
+import icon8200 from './8200.png';
+import shopping from './shopping.jpeg';
+import weather from './weather.png';
+import book from './book.png';
 
 export default function SideProject() {
-	const selectText = useSelectText();
+
+
 	return (
-		<Card style={{ overflow: "hidden", flexDirection: "row", padding: 0, flexWrap: "wrap-reverse" }}>
-
-			<View style={{ padding: 20, flexBasis: 200, flexGrow: 1, justifyContent: "space-evenly" }}>
-			<AppText style={{ fontSize: 20, letterSpacing: 1.1, fontWeight: "bold", marginBottom: 30, }}>
-					{
-						selectText({
-							en: `In my spare time`,
-							fr: `Dans mes temps libre`,
-						})
-					}
-				</AppText>
-
-				<AppText style={{ fontSize: 18, letterSpacing: 1.1 }}>
-					{
-						selectText({
-							en: `I mainly use my spare time to create side projects and participate to open-sources.`
-								+ '\n\n' + `The main side project I am working on is a cryptocurrency copy-trader bot.`
-								+ '\n\n' + `But I have other projects and open-source libraries I'm invested in.`,
-							fr: `J'occupe principalement mes temps libre à créer des projets et à participer à des open-sources.`
-							+ `\n\n` + `Le projet principal sur lequel je travaille actuellement est un robot de copy-trading avec les crypto-monnaies.`
-							+ '\n\n' + `Il y a aussi d'autre projets et bibliothèques open-source dont je m'investis.`,
-						})
-					}
-				</AppText>
+		<Card style={{ overflow: 'hidden', position: 'relative', flexDirection: 'column' }}>
+			<View style={styles.topRow}>
+				<View style={styles.topImages}>
+					<TouchableOpacity onPress={() => console.log('Icon pressed')}>
+						<a key={'https://github.com/estherwa'} href={'https://github.com/estherwa'}>
+							<Image source={icon8200} resizeMode="contain" style={styles.image} />
+						</a>
+					</TouchableOpacity>
+				</View>
+				<View style={styles.topImages}>
+					<TouchableOpacity onPress={() => console.log('Icon pressed')}>
+						<a key={'https://github.com/estherwa'} href={'https://github.com/estherwa'}>
+							<Image source={weather} resizeMode="contain" style={styles.image} />
+						</a>
+					</TouchableOpacity>
+				</View>
 			</View>
 
-			<Image source={{ uri: cryptocurrenciesPicture }} resizeMode="cover" style={{ minWidth: 200, flexGrow: 1, minHeight: 200 }} />
+			{/* Middle - Git Icon */}
+			<View style={styles.iconContainer}>
+				<a key={'https://github.com/estherwa'} href={'https://github.com/estherwa'}>
+					<TouchableOpacity onPress={() => console.log('Icon pressed')}>
+						<Image source={githubIcon} resizeMode="contain" style={styles.icon} />
+					</TouchableOpacity>
+				</a>
+			</View>
+
+			<View style={styles.bottomRow}>
+				<View style={styles.bottomImages}>
+					<TouchableOpacity onPress={() => console.log('Icon pressed')}>
+						<a key={'https://github.com/estherwa'} href={'https://github.com/estherwa'}>
+							<Image source={shopping} resizeMode="contain" style={styles.image} />
+						</a>
+					</TouchableOpacity>
+				</View>
+				<View style={styles.bottomImages}>
+					<TouchableOpacity onPress={() => console.log('Icon pressed')}>
+						<a key={'https://github.com/estherwa'} href={'https://github.com/estherwa'}>
+							<Image source={book} resizeMode="contain" style={styles.image} />
+						</a>
+					</TouchableOpacity>
+				</View>
+			</View>
 		</Card>
 	);
 }
+
+const styles = StyleSheet.create({
+	image: {
+		flex: 1,
+		width: 260,
+		height: 250,
+		borderRadius: 70
+	},
+	topRow: {
+		flexDirection: 'row',
+		marginBottom: 50,
+	},
+	bottomRow: {
+		flexDirection: 'row',
+		marginTop: 10,
+	},
+	topImages: {
+		flex: 1,
+		marginRight: 40,
+		marginLeft: 50,
+	},
+	bottomImages: {
+		flex: 1,
+		marginLeft: 50,
+		marginRight: 40,
+	},
+	shopping: {
+		flex: 1,
+		height: 355,
+		width: 305,
+		marginRight: 20,
+	},
+	book: {
+		flex: 1,
+		height: 355,
+		width: 305,
+		marginLeft: 20,
+	},
+	weather: {
+		flex: 1,
+		height: 355,
+		width: 305,
+		alignSelf: 'flex-end',
+		alignItems: 'flex-end',
+	},
+	icon8200: {
+		flex: 1,
+		marginRight: 10,
+		height: 355,
+		width: 305,
+	},
+	iconContainer: {
+		...StyleSheet.absoluteFillObject,
+		justifyContent: 'center',
+		alignItems: 'center',
+	},
+	icon: {
+		height: 50,
+		width: 50,
+		opacity: 0.6,
+	},
+});

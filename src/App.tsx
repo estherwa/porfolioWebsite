@@ -33,7 +33,7 @@ function App() {
 	const scrollToSection = (index: number) => {
 		const yOffset = index * window.innerHeight;
 		scrollViewRef.current?.scrollTo({ y: yOffset, animated: true, });
-		window.scrollTo(0, yOffset );
+		window.scrollTo(0, yOffset);
 	};
 
 	return (
@@ -55,7 +55,7 @@ function App() {
 							onPress={() => scrollToSection(index)}
 							style={styles.sectionButton}
 						>
-							<AppText>{section}</AppText>
+							<AppText style={{ color: "black" }}>{section}</AppText>
 						</TouchableOpacity>
 					))}
 				</View>
@@ -95,7 +95,7 @@ const styles = {
 		scrollSnapAlign: 'start', // or any other value you need
 	},
 	appbar: {
-		color: 'blue',
+		color: '#00000',
 		flexDirection: 'row',
 		justifyContent: 'center',
 		position: 'fixed',
@@ -118,7 +118,7 @@ const styles = {
 		paddingVertical: 12,
 		paddingHorizontal: 20,
 		margin: 5,
-		color: 'blue',
+		color: '#ddd',
 		borderRadius: 8,
 		marginVertical: 25,
 		borderWidth: 1,
@@ -126,100 +126,3 @@ const styles = {
 		alignItems: 'center', // Center content horizontally
 	},
 } as const;
-
-// import { useEffect, useState } from 'react';
-// import { ScrollView, View } from "react-native";
-// import Page from './component/Page';
-// import LangSelector from './component/LangSelector';
-// import { Lang, langs, LanguageContext } from './hook/useLang';
-// import Profile from './page/Profile';
-// import SideProject from './page/SideProject';
-// import Skills from './page/Skills';
-// import Story from './page/Story';
-// import AppText from './component/Text';
-// import ScrollDownIndicator from './component/ScrollDownIndicator';
-// import OpenSources from './page/OpenSources';
-// import Languages from './page/Languages';
-
-// function App() {
-// 	useEffect(() => {
-// 		setTimeout(() => {
-// 			const root = document.getElementById("root");
-// 			root?.classList.remove('invisible');
-// 		}, 2000);
-// 	}, []);
-
-// 	const [lang, setLang] = useState<Lang>(selectDefaultLang);
-// 	return (
-// 		<LanguageContext.Provider value={lang}>
-// 			<>
-// 				{/* @ts-ignore */}
-// 				<View style={styles.appbar}>
-
-// 					<LangSelector value={lang} onValueChange={setLang} />
-
-
-// 					<View onClick={() => <Skills />} style={styles.experience}> Experience </View>
-// 				</View>
-
-
-
-
-// 				{
-// 					[
-// 						Profile,
-// 						Story,
-// 						Languages,
-// 						Skills,
-// 						SideProject,
-
-// 					].map((Content, index) =>
-// 						<Page key={index}>
-
-// 							<Content />
-
-// 							{
-// 								!index &&
-// 								<ScrollDownIndicator />
-// 							}
-// 						</Page>
-// 					)
-// 				}
-// 			</>
-// 		</LanguageContext.Provider>
-// 	);
-// }
-
-// export default App
-
-
-// function selectDefaultLang(): Lang {
-// 	const defaultLang = 'en';
-
-// 	const browserLang = window.navigator.language?.split('-')[0];
-// 	let lang = browserLang;
-// 	if (!langs.includes(lang))
-// 		lang = defaultLang;
-
-// 	return lang as Lang;
-// }
-
-// const styles = {
-// 	appbar: {
-// 		flexDirection: "row",
-// 		justifyContent: "flex-end",
-// 		position: "fixed",
-// 		top: 0,
-// 		backgroundColor: "#000000",
-// 		left: 0,
-// 		right: 0,
-// 		zIndex: 1,
-// 	},
-// 	experience: {
-
-
-// 		backgroundColor: "white",
-
-
-// 	}
-// } as const;

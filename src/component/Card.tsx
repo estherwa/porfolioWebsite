@@ -12,9 +12,9 @@ export const cardStyle: ViewStyle = {
 	// @ts-ignore
 	backdropFilter: "blur(5px)",
 	borderRadius: 12,
-	minHeight: 500,
-	width: "90vw",
-	maxWidth: 700,
+	minHeight: 550,
+	width: "100vw",
+	maxWidth: 800,
 	alignSelf: "center",
 	padding: 20,
 	shadowRadius: 10,

@@ -38,6 +38,7 @@ export default function Profile() {
 				{
 					[
 						[githubIcon, "https://github.com/estherwa"],
+
 						[linkedinIcon, "https://www.linkedin.com/in/esther-wahnon-8366621a7/"],
 					].map(([uri, url]) =>
 						<a key={url} href={url} target="_blank">
