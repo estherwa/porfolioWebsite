@@ -1,35 +1,31 @@
 import React from 'react';
-import { Image, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { Image, View, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
 import Card from '../../component/Card';
 import AppText from '../../component/Text';
 import { useSelectText } from '../../hook/useLang';
-import imageProject from './2.png';
 import githubIcon from './github.svg';
-import icon8200 from './8200.png';
+import icon8200 from './8200pic.png';
 import shopping from './shopping.jpeg';
 import weather from './weather.png';
 import book from './book.png';
 
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
+
 export default function SideProject() {
-
-
 	return (
-		<Card style={{ overflow: 'hidden', position: 'relative', flexDirection: 'column' }}>
-			<View style={styles.topRow}>
-				<View style={styles.topImages}>
-					<TouchableOpacity onPress={() => console.log('Icon pressed')}>
-						<a key={'https://github.com/estherwa'} href={'https://github.com/estherwa'}>
-							<Image source={icon8200} resizeMode="contain" style={styles.image} />
-						</a>
-					</TouchableOpacity>
-				</View>
-				<View style={styles.topImages}>
-					<TouchableOpacity onPress={() => console.log('Icon pressed')}>
-						<a key={'https://github.com/estherwa'} href={'https://github.com/estherwa'}>
-							<Image source={weather} resizeMode="contain" style={styles.image} />
-						</a>
-					</TouchableOpacity>
-				</View>
+		<Card style={styles.container}>
+			<View style={styles.row}>
+				<TouchableOpacity onPress={() => console.log('Icon pressed')}>
+					<a key={'https://github.com/estherwa'} href={'https://github.com/estherwa'}>
+						<Image source={icon8200} resizeMode="contain" style={styles.image} />
+					</a>
+				</TouchableOpacity>
+				<TouchableOpacity onPress={() => console.log('Icon pressed')}>
+					<a key={'https://github.com/estherwa'} href={'https://github.com/estherwa'}>
+						<Image source={weather} resizeMode="contain" style={styles.image} />
+					</a>
+				</TouchableOpacity>
 			</View>
 
 			{/* Middle - Git Icon */}
@@ -41,84 +37,53 @@ export default function SideProject() {
 				</a>
 			</View>
 
-			<View style={styles.bottomRow}>
-				<View style={styles.bottomImages}>
-					<TouchableOpacity onPress={() => console.log('Icon pressed')}>
-						<a key={'https://github.com/estherwa'} href={'https://github.com/estherwa'}>
-							<Image source={shopping} resizeMode="contain" style={styles.image} />
-						</a>
-					</TouchableOpacity>
-				</View>
-				<View style={styles.bottomImages}>
-					<TouchableOpacity onPress={() => console.log('Icon pressed')}>
-						<a key={'https://github.com/estherwa'} href={'https://github.com/estherwa'}>
-							<Image source={book} resizeMode="contain" style={styles.image} />
-						</a>
-					</TouchableOpacity>
-				</View>
+			<View style={styles.row}>
+				<TouchableOpacity onPress={() => console.log('Icon pressed')}>
+					<a key={'https://github.com/estherwa'} href={'https://github.com/estherwa'}>
+						<Image source={shopping} resizeMode="contain" style={styles.image} />
+					</a>
+				</TouchableOpacity>
+				<TouchableOpacity onPress={() => console.log('Icon pressed')}>
+					<a key={'https://github.com/estherwa'} href={'https://github.com/estherwa'}>
+						<Image source={book} resizeMode="contain" style={styles.image} />
+					</a>
+				</TouchableOpacity>
 			</View>
 		</Card>
 	);
 }
 
 const styles = StyleSheet.create({
-	image: {
-		flex: 1,
-		width: 260,
-		height: 250,
-		borderRadius: 70
-	},
-	topRow: {
-		flexDirection: 'row',
-		marginBottom: 50,
-	},
-	bottomRow: {
-		flexDirection: 'row',
-		marginTop: 10,
-	},
-	topImages: {
-		flex: 1,
-		marginRight: 40,
-		marginLeft: 50,
-	},
-	bottomImages: {
-		flex: 1,
-		marginLeft: 50,
-		marginRight: 40,
-	},
-	shopping: {
-		flex: 1,
-		height: 355,
-		width: 305,
-		marginRight: 20,
-	},
-	book: {
-		flex: 1,
-		height: 355,
-		width: 305,
-		marginLeft: 20,
-	},
-	weather: {
-		flex: 1,
-		height: 355,
-		width: 305,
-		alignSelf: 'flex-end',
-		alignItems: 'flex-end',
-	},
-	icon8200: {
-		flex: 1,
-		marginRight: 10,
-		height: 355,
-		width: 305,
-	},
-	iconContainer: {
-		...StyleSheet.absoluteFillObject,
+	container: {
+		overflow: 'hidden',
+		position: 'relative',
+		flexDirection: 'column',
 		justifyContent: 'center',
 		alignItems: 'center',
+		padding: 65, // Add more padding around the entire component
+	},
+	row: {
+		flexDirection: 'row',
+		marginBottom: windowHeight * 0.03,
+		marginTop: windowHeight * 0.03,
+		marginRight: windowHeight * 0.3,
+		marginLeft: windowHeight * 0.3,
+	},
+	image: {
+		flex: 1,
+		width: windowWidth * 0.25, // Adjusted width to make images closer to the icon
+		height: windowHeight * 0.25, // Adjusted height to make images larger
+		margin: windowWidth * 0.015, // Adjusted margin to make images closer to the icon
+
+	},
+	iconContainer: {
+		alignSelf: 'center',
+		alignItems: 'center',
+		marginTop: windowHeight * 0.01,
 	},
 	icon: {
-		height: 50,
-		width: 50,
+		height: windowHeight * 0.1,
+		width: windowHeight * 0.1,
 		opacity: 0.6,
 	},
 });

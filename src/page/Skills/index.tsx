@@ -9,14 +9,13 @@ import nodeJSPNG from "./node.png"
 import reactPNG from "./react.png"
 import typescriptPNG from "./typescript.png"
 import postgrePNG from "./postgre.png"
-import stripePNG from "./stripe.png"
-import pdfPNG from "./pdf.png"
+import java from "./java.png"
+import cPNG from "./c++.png"
 import rxjsPNG from "./rxjs.png"
-import puppeteerPNG from "./puppeteer.png"
-import ethereumPNG from "./ethereum.png"
 import { useState } from "react";
 import AppText from "../../component/Text";
-
+import angular from "./angular.png";
+import docker from "./docker.png";
 export default function Skills() {
 	const [showMore, setShowMore] = useState<boolean>(false);
 	const selectText = useSelectText();
@@ -83,14 +82,14 @@ export default function Skills() {
 										color: "#336791",
 									},
 									{
-										logo: stripePNG,
-										name: "Stripe",
+										logo: java,
+										name: "Java",
 										color: "#5433FF",
 									},
 									{
-										logo: pdfPNG,
-										name: "PdfKit",
-										color: "red",
+										logo: cPNG,
+										name: "C++",
+										color: "#3178C6",
 									},
 									{
 										logo: rxjsPNG,
@@ -98,14 +97,14 @@ export default function Skills() {
 										color: "rgb(241, 0, 144)",
 									},
 									{
-										logo: puppeteerPNG,
-										name: "Puppeteer",
+										logo: angular,
+										name: "Angular",
 										color: "rgb(1, 209, 157)",
 									},
 									{
-										logo: ethereumPNG,
-										name: "Solidity",
-										color: "grey",
+										logo: docker,
+										name: "Docker",
+										color: "rgb(1, 209, 157)",
 									},
 								]
 							)
