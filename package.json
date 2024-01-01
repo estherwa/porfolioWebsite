@@ -9,6 +9,7 @@
     "deploy": "yarn build && firebase deploy --only hosting"
   },
   "dependencies": {
+    "@formspree/react": "^2.5.1",
     "@react-spring/parallax": "^9.4.5",
     "add": "^2.0.6",
     "firebase": "^9.8.1",

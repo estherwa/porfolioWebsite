@@ -6,13 +6,14 @@ import { Lang, langs, LanguageContext } from './hook/useLang';
 import Profile from './page/Profile';
 import SideProject from './page/SideProject';
 import Skills from './page/Skills';
+import ContactMe from './page/ContactMe';
 import Story from './page/Story';
 import AppText from './component/Text';
 import ScrollDownIndicator from './component/ScrollDownIndicator';
 import OpenSources from './page/OpenSources';
 import Languages from './page/Languages';
 
-const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 function App() {
 	const scrollViewRef = useRef<ScrollView>(null);
@@ -31,17 +32,17 @@ function App() {
 	const [lang, setLang] = useState<Lang>(selectDefaultLang);
 
 	const scrollToSection = (index: number) => {
-		const yOffset = index * window.innerHeight;
+		const yOffset = index * windowHeight;
 		scrollViewRef.current?.scrollTo({ y: yOffset, animated: true });
 		window.scrollTo(0, yOffset);
 	};
 
 	return (
 		<>
-			<LangSelector value={lang} onValueChange={setLang} />
+			{/* <LangSelector value={lang} onValueChange={setLang} /> */}
 			<LanguageContext.Provider value={lang}>
 				<View style={styles.appbar}>
-					{['Profile', 'Story', 'Languages', 'Skills', 'SideProject'].map((section, index) => (
+					{['Profile', 'Story', 'Languages', 'Skills', 'SideProject', 'ContactMe'].map((section, index) => (
 						<TouchableOpacity
 							key={index}
 							onPress={() => scrollToSection(index)}
@@ -53,7 +54,7 @@ function App() {
 				</View>
 
 				<ScrollView ref={scrollViewRef} showsVerticalScrollIndicator={false}>
-					{[Profile, Story, Languages, Skills, SideProject].map((Content, index) => (
+					{[Profile, Story, Languages, Skills, SideProject, ContactMe].map((Content, index) => (
 						<Page key={index}>
 							<Content />
 							{!index && <ScrollDownIndicator />}
@@ -85,19 +86,18 @@ const styles = {
 		left: 0,
 		right: 0,
 		zIndex: 1,
-		
-		padding: 30,
 	},
 	sectionButton: {
 		
 		backgroundColor: 'white',
 		paddingVertical: 8,
-		margin: 35,
+		margin: 30,
 		color: '#ddd',
 		borderRadius: 8,
 		borderWidth: 1,
 		borderColor: '#ddd',
 		alignItems: 'center',
+		minWidth: 100,
 		flex: 1,
 	},
 } as const;
