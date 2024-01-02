@@ -1,13 +1,14 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { apiKey, appId, authDomain, measurementId, messagingSenderId, projectId, storageBucket } from "./vite-env";
 
 const app = initializeApp({
-	apiKey: "AIzaSyDvwkUY9KWv6uYSxKNyXTSqUuZFktKeNHA",
-	authDomain: "yair-behar.firebaseapp.com",
-	projectId: "esther-wahnon-b3cb2",
-	storageBucket: "esther-wahnon-b3cb2.appspot.com",
-	messagingSenderId: "647954127299",
-	appId: "1:647954127299:web:110d58ce882bbd1d500576",
-	measurementId: "G-LJPYXG4CXL"
+	apiKey: apiKey,
+	authDomain: authDomain,
+	projectId: projectId,
+	storageBucket: storageBucket,
+	messagingSenderId: messagingSenderId,
+	appId: appId,
+	measurementId:measurementId
 });
 getAnalytics(app); // start analytics
