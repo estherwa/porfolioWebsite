@@ -21,14 +21,14 @@ export default function SideProject() {
 				<View onPress={() => console.log('Icon pressed')}>
 					<a key={'https://github.com/estherwa/8200_project'} href={'https://github.com/estherwa/8200_project'}>
 						<View style={styles.imageContainer}>
-							<Image source={icon8200} resizeMode="contain" style={styles.image} />
+							<Image source={icon8200}  style={styles.image} />
 						</View>
 					</a>
 				</View>
 				<View onPress={() => console.log('Icon pressed')}>
 					<a key={'https://github.com/idanbau/My-Weather-Website-React'} href={'https://github.com/idanbau/My-Weather-Website-React'}>
 						<View style={styles.imageContainer}>
-							<Image source={weather} resizeMode="contain" style={styles.image} />
+							<Image source={weather}  style={styles.image} />
 						</View>
 					</a>
 				</View>
@@ -38,7 +38,7 @@ export default function SideProject() {
 			<View style={styles.iconContainer}>
 				<View onPress={() => console.log('Icon pressed')}>
 					<a key={'https://github.com/estherwa'} href={'https://github.com/estherwa'}>
-						<Image source={githubIcon} resizeMode="contain" style={styles.git} />
+						<Image source={githubIcon}  style={styles.git} />
 					</a>
 				</View>
 			</View>
@@ -47,14 +47,14 @@ export default function SideProject() {
 				<View onPress={() => console.log('Icon pressed')}>
 					<a key={'https://github.com/idanbau/My-Library-Store-Spring'} href={'https://github.com/idanbau/My-Library-Store-Spring'}>
 						<View style={styles.imageContainer}>
-							<Image source={shopping} resizeMode="contain" style={styles.image} />
+							<Image source={shopping}  style={styles.image} />
 						</View>
 					</a>
 				</View>
 				<View onPress={() => console.log('Icon pressed')}>
 					<a key={'https://github.com/estherwa/estherWahnon_bookStore'} href={'https://github.com/estherwa/estherWahnon_bookStore'}>
 						<View style={styles.imageContainer}>
-							<Image source={book} resizeMode="contain" style={styles.image} />
+							<Image source={book}  style={styles.image} />
 						</View>
 					</a>
 				</View>
@@ -98,8 +98,8 @@ const styles = ({
 
 	},
 	image: {
-		width: imageSize.width + 156,
-		height: imageSize.height + 120,
+		width: imageSize.width + 116,
+		height: imageSize.height + 35,
 		opacity: 1,
 		position: "absolute",
 		objectFit: 'cover',

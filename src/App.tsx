@@ -42,7 +42,7 @@ function App() {
 			{/* <LangSelector value={lang} onValueChange={setLang} /> */}
 			<LanguageContext.Provider value={lang}>
 				<View style={styles.appbar}>
-					{['Profile', 'Story', 'Languages', 'Skills', 'SideProject', 'ContactMe'].map((section, index) => (
+					{['Profile', 'Story', 'Languages', 'Skills', 'Side Projects', 'Contact Me'].map((section, index) => (
 						<TouchableOpacity
 							key={index}
 							onPress={() => scrollToSection(index)}
