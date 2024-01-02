@@ -1,8 +1,7 @@
 import React from 'react';
-import { Image, View, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
+import { Image, View, StyleSheet, Dimensions } from 'react-native';
 import Card from '../../component/Card';
 import AppText from '../../component/Text';
-import { useSelectText } from '../../hook/useLang';
 import githubIcon from './github.svg';
 import icon8200 from './8200pic.png';
 import shopping from './shopping.jpeg';
@@ -16,84 +15,108 @@ export default function SideProject() {
 	return (
 		<Card style={styles.container}>
 			<AppText style={{ fontSize: 25, letterSpacing: 1.1, textAlign: "center", marginBottom: 30, fontWeight: "bold" }}>
-				
-					 Side Projects:
-
+				Side Projects:
 			</AppText>
 			<View style={styles.row}>
-				<TouchableOpacity onPress={() => console.log('Icon pressed')}>
+				<View onPress={() => console.log('Icon pressed')}>
 					<a key={'https://github.com/estherwa/8200_project'} href={'https://github.com/estherwa/8200_project'}>
-						<Image source={icon8200} resizeMode="contain" style={styles.image} />
+						<View style={styles.imageContainer}>
+							<Image source={icon8200} resizeMode="contain" style={styles.image} />
+						</View>
 					</a>
-				</TouchableOpacity>
-				<TouchableOpacity onPress={() => console.log('Icon pressed')}>
+				</View>
+				<View onPress={() => console.log('Icon pressed')}>
 					<a key={'https://github.com/idanbau/My-Weather-Website-React'} href={'https://github.com/idanbau/My-Weather-Website-React'}>
-						<Image source={weather} resizeMode="contain" style={styles.image} />
+						<View style={styles.imageContainer}>
+							<Image source={weather} resizeMode="contain" style={styles.image} />
+						</View>
 					</a>
-				</TouchableOpacity>
+				</View>
 			</View>
 
 			{/* Middle - Git Icon */}
 			<View style={styles.iconContainer}>
-				<TouchableOpacity onPress={() => console.log('Icon pressed')}>
-				<a key={'https://github.com/estherwa'} href={'https://github.com/estherwa'}>
+				<View onPress={() => console.log('Icon pressed')}>
+					<a key={'https://github.com/estherwa'} href={'https://github.com/estherwa'}>
 						<Image source={githubIcon} resizeMode="contain" style={styles.git} />
 					</a>
-				</TouchableOpacity>
+				</View>
 			</View>
 
 			<View style={styles.row}>
-				<TouchableOpacity onPress={() => console.log('Icon pressed')}>
+				<View onPress={() => console.log('Icon pressed')}>
 					<a key={'https://github.com/idanbau/My-Library-Store-Spring'} href={'https://github.com/idanbau/My-Library-Store-Spring'}>
-						<Image source={shopping} resizeMode="contain" style={styles.image} />
+						<View style={styles.imageContainer}>
+							<Image source={shopping} resizeMode="contain" style={styles.image} />
+						</View>
 					</a>
-				</TouchableOpacity>
-				<TouchableOpacity onPress={() => console.log('Icon pressed')}>
+				</View>
+				<View onPress={() => console.log('Icon pressed')}>
 					<a key={'https://github.com/estherwa/estherWahnon_bookStore'} href={'https://github.com/estherwa/estherWahnon_bookStore'}>
-						<Image source={book} resizeMode="contain" style={styles.image} />
+						<View style={styles.imageContainer}>
+							<Image source={book} resizeMode="contain" style={styles.image} />
+						</View>
 					</a>
-				</TouchableOpacity>
+				</View>
 			</View>
 		</Card>
 	);
 }
 
-const imageSize = { width: 330, height: 240 }; // Set a fixed size for the images
+const imageSize = { width: 150, height: 150 };
 
-const styles = StyleSheet.create({
+const styles = ({
 	container: {
 		justifyContent: 'center',
 		alignItems: 'center',
-		margin: 135,
-		flexDirection: 'row',
-		flexWrap: 'wrap',
+		margin: 10,
+		flexDirection: 'column',
+		inset: 0,
+		zIndex: -1,
+	
+
 	},
 	row: {
 		flexDirection: 'row',
 		alignItems: 'center',
-		justifyContent: 'space-between',
-		marginBottom: windowHeight * 0.02, // Adjusted margin to separate top and bottom rows
+		justifyContent: 'space-around',
+		marginBottom: 30, // Increase the space between rows
+
+	},
+	imageContainer: {
+		width: imageSize.width + 120, // Add more width to contain the image
+		height: imageSize.height + 40, // Add more height to contain the image
+		overflow: 'hidden',
+		margin: 20, // Increase the space between image containers
+		borderWidth: 5,
+		borderColor: 'pink',
+		borderRadius: 10,
+		position: "flex",
+		objectFit: 'cover',
+		zIndex: -1,
+		inset: 0
+
 	},
 	image: {
-		width: imageSize.width,
-		height: imageSize.height,
-		margin: windowWidth * 0.015,
+		width: imageSize.width + 156,
+		height: imageSize.height + 120,
+		opacity: 1,
+		position: "absolute",
+		objectFit: 'cover',
+		zIndex: -1,
+		inset: 0
 	},
 	iconContainer: {
-
 		alignSelf: 'center',
 		alignItems: 'center',
-		marginTop: windowHeight * 0.01,
-		marginBottom: windowHeight * 0.02, // Adjusted margin to separate top and bottom rows
-	},
-	icon: {
-		width: imageSize.width,
-		height: imageSize.height,
-		opacity: 0.6,
+		margin: 20,
+
+		objectFit: 'cover',
+		zIndex: -1
 	},
 	git: {
-		width: 80,
-		height: 80,
-		opacity: 0.6,
+		width: 70,
+		height: 70,
+		//opacity: 0.6,
 	},
 });
