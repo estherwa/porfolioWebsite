@@ -84,6 +84,8 @@ const styles = ({
 
 	},
 	imageContainer: {
+		minWidth: imageSize.width,
+		minHeight: imageSize.height,
 		width: imageSize.width + 120, // Add more width to contain the image
 		height: imageSize.height + 40, // Add more height to contain the image
 		overflow: 'hidden',
@@ -92,9 +94,7 @@ const styles = ({
 		borderColor: 'pink',
 		borderRadius: 10,
 		position: "flex",
-		objectFit: 'cover',
-		zIndex: -1,
-		inset: 0
+
 
 	},
 	image: {
