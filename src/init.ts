@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-import { apiKey, appId, authDomain, measurementId, messagingSenderId, projectId, storageBucket } from "../vite-env";
+import { apiKey, appId, authDomain, measurementId, messagingSenderId, projectId, storageBucket } from "../vite-env.d";
 
 const app = initializeApp({
 	apiKey: apiKey,
